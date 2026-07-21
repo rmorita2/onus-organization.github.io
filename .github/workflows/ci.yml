@@ -1,4 +1,4 @@
-name: ci
+name: Deployment to Github Pages
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 on:
@@ -6,6 +6,12 @@ on:
     branches: [main, master]
   pull_request:
     branches: [main, master]
+
+permissions: 
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   test:
     timeout-minutes: 60
@@ -70,4 +76,14 @@ jobs:
         if: always() && env.ACT != 'true'
         run: |
           echo "::notice::To view the Playwright test report, download the 'playwright-report' artifact from the workflow run's summary page in GitHub Actions."
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        with:
+          path: './out'
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
      
