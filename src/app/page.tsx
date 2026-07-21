@@ -2,7 +2,7 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
-import '../style.css';
+import './style.css';
 
 import LandingPage from '../components/LandingPage';
 
