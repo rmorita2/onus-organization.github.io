@@ -41,4 +41,4 @@ The goal of this milestone is to have a decent outline and a few pages to get st
 
 ## Team
 
-Currently, the team consists of two members, [Erika Penullar](https://github.com/E-Penullar) and [Robyn Morita](https://github.com/rmorita2)
+Currently, the team consists of two members, [Erika Penullar](https://github.com/E-Penullar) and [Robyn Morita](https://github.com/rmorita2).
